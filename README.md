@@ -6,9 +6,13 @@ We have a generic API service storing users, built up on Golang and using MariaD
 Description: Retrieves or adds users into the database
 
 curl --header "Content-Type: application/json" --request POST --data '{"name":"test user","age":30}' http://host:8080/user
+
 curl --header "Content-Type: application/json" --request POST --data '{"name":"test user 2","age":40}' http://host:8080/user
+
 curl --header "Content-Type: application/json" http://host:8080/users
+
 curl --header "Content-Type: application/json" http://host:8080/user/1
+
 curl --header "Content-Type: application/json" http://host:8080/user/2
 
 ### Prerequisites
