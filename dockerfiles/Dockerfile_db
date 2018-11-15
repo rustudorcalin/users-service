@@ -1,0 +1,10 @@
+FROM mariadb:latest
+
+ENV MYSQL_DATA_DIR=/var/lib/mysql \
+    MYSQL_RUN_DIR=/run/mysqld \
+    MYSQL_LOG_DIR=/var/log/mysql
+
+COPY dockerfiles/users.sql /docker-entrypoint-initdb.d/
+RUN ["/usr/local/bin/docker-entrypoint.sh"]
+
+EXPOSE 3306
