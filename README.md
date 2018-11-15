@@ -203,8 +203,7 @@ $ kubectl describe nodes gke-test-project-default-pool-dbd613fd-9d7p | grep zone
                     failure-domain.beta.kubernetes.io/zone=europe-west1-d
 ```
 
-2. Let's deploy now the actual code on top of Kubernetes
-There are two options here, either run the default containers, having version 1.0, which are already pushed to docker hub registry, either you can just build your own.
+2. Let's deploy now the actual code on top of Kubernetes. There are two options. First is to run the script with the initial containers, having version 1.0. These are already pushed to docker hub registry. Second, you can just build your own from the existing Dockerfiles.
 
 2.1 Deploying version 1:0
 
@@ -283,7 +282,7 @@ $ kubectl delete deployment mariadb-deployment
 deployment.extensions "mariadb-deployment" deleted
 ```
 
-Let's run now again the deploy script and let it build new imagins for us, push them to registry and then create the deployments.
+Let's run now again the deploy script and let it build new images for us, push them to registry and then create the deployments.
 
 ```bash
 $ ./deploy.sh k8s/golang-mysql.yaml 
