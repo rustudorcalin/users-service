@@ -3,7 +3,7 @@ We have a generic API service storing users, built up on Golang and using MariaD
 
 # API functionality
 
-Description: Retrives or adds users into the database
+Description: Retrieves or adds users into the database
 
 curl --header "Content-Type: application/json" --request POST --data '{"name":"test user","age":30}' http://host:8080/user
 curl --header "Content-Type: application/json" --request POST --data '{"name":"test user 2","age":40}' http://host:8080/user
@@ -27,7 +27,7 @@ On the VM were you want to run this, you need to have the followings:
 
 ### Building/testing steps
 
-Download all the files from this repo. You will need to replace the dummy `account.json` file inside _secrets_ folder with your real one containg the service account information. Also, in _gke_ folder you will need to adjust the dummy project with your real one. Files needed to be edited with actual information:
+Download all the files from this repo. You will need to replace the dummy `account.json` file inside _secrets_ folder with your real one containing the service account information. Also, in _gke_ folder you will need to adjust the dummy project with your real one. Files needed to be edited with actual information:
 - connections.tf:    project     = "dummy-charged-state"
 - terraform.tfvars:project = "dummy-charged-state"
 - variables.tf:  default = "dummy-charged-state"
