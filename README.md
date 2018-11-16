@@ -205,7 +205,7 @@ $ kubectl describe nodes gke-test-project-default-pool-dbd613fd-9d7p | grep zone
 
 2. Let's deploy now the actual code on top of Kubernetes. There are two options. First is to run the script with the initial containers, having version 1.0. These are already pushed to docker hub registry. Second, you can just build your own from the existing Dockerfiles.
 
-2.1 Deploying version 1:0
+2.1 Deploying version 1.0
 
 ```bash
 $ ./deploy.sh k8s/golang-mysql.yaml
@@ -266,8 +266,9 @@ $ curl --header "Content-Type: application/json" http://35.240.37.115:8080/user/
 {"id":2,"name":"test user 2","age":40}[root@demo-tlnv demo-project]# 
 ```
 
-2.2 Deploying version 2.0 (or else)
-We will be removing only the deployments and leave the current services running. Of course you won't do this in a production environment, as you don't want to have a service disruption. To update a service without an outage, kubectl supports what is called `rolling update` which updates one pod at a time, rather than taking down the entire service at the same time. 
+2.2 Deploying version 2.0 (or greater)
+
+We will be removing only the deployments and leave the current services running. Of course you don't want to do this in a production environment, as you don't want to have a service disruption. To update a service without an outage, kubectl supports what is called `rolling update` which updates one pod at a time, rather than taking down the entire service at the same time. 
 
 ```bash
 $ kubectl get deployments
