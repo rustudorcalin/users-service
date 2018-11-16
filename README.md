@@ -266,7 +266,7 @@ $ curl --header "Content-Type: application/json" http://35.240.37.115:8080/user/
 {"id":2,"name":"test user 2","age":40}[root@demo-tlnv demo-project]# 
 ```
 
-2.2 Deploying version 2:0 (or else)
+2.2 Deploying version 2.0 (or else)
 We will be removing only the deployments and leave the current services running. Of course you won't do this in a production environment, as you don't want to have a service disruption. To update a service without an outage, kubectl supports what is called `rolling update` which updates one pod at a time, rather than taking down the entire service at the same time. 
 
 ```bash
